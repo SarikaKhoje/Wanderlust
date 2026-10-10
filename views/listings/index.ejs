@@ -1,0 +1,42 @@
+<%layout("/layouts/boilerplate")%>
+<body>
+    <h3>All Listing</h3>
+    <!-- <form action="/index/create" method="get">
+           <button>Add New</button>
+    </form> -->
+    <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
+    <%for(let list of Lists ){ %>
+    <a href="/index/<%=list._id%>/show" class="listing-link">
+      <div class="card col">
+      <img src="<%=list.image.url%>" class="card-img-top" alt="Listing Image" style="height:20rem;">
+       <div class="card-img-overlay"></div>
+      <div class="card-body">
+      <p class="card-text">
+        <p><b><%= list.title%></b></p>
+        <p>Price : &#8377;<%= list.price.toLocaleString("en-IN") %>/night</p>
+      </p>
+  </div>
+
+</div>
+  </a>
+<%}%>
+</div>
+
+
+
+    <!-- <%for(let list of Lists ){ %>
+        <div>
+            <h4><%= list.title %></h4>
+            <div class="img">
+                <img src="<%=list.image.url%>" alt="" srcset="">
+            </div>
+            
+            <p><%= list.description %></p>
+            <p>Price :<%= list.price %></p>
+            <form action="/index/<%=list._id%>/show" method="get"><button>Show</button></form>
+            <form action="/index/<%=list._id%>/edit" method="get"><button>Edit</button></form>
+            <form action="/index/<%=list._id%>/DELETE?_method=DELETE" method="post"><button>Delete</button></form>
+        </div>
+        <hr>
+    <%}%> -->
+</body>
